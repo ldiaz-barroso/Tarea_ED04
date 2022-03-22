@@ -1,5 +1,10 @@
 package cuentas;
 
+/**
+* @author  Lara Díaz
+* @version 1.0
+*/
+
 public class CCuenta {
 
 
@@ -8,10 +13,20 @@ public class CCuenta {
     private double saldo;
     private double tipoInterés;
 
+    /**
+     * Constructor por defecto para CCuenta
+     */
     public CCuenta()
     {
     }
 
+     /**
+      * Constructor con los atributos nombre, cuenta, saldo y tipo de interés
+      * @param nom tipo String
+      * @param cue tipo String
+      * @param sal tipo double
+      * @param tipo tipo double
+      */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
@@ -75,11 +90,19 @@ public class CCuenta {
         this.tipoInterés = tipoInterés;
     }
 
+    /**
+     * @return saldo, utilizando getSaldo  
+     */
     public double estado()
     {
         return getSaldo();
     }
 
+    /**
+     * Método para ingresar dinero, donde al saldo actual (getSaldo) se le suma la cantidad a ingresar
+     * @param cantidad de tipo double
+     * @throws Exception no se podrá ingresar una cantidad negativa
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -87,6 +110,12 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Método para retirar dinero, donde al saldo actual (getSaldo) se le resta la cantidad que se desea retirar
+     * @param cantidad de tipo double
+     * @throws Exception no se podrá retirar una cantidad negativa y no se podrá retirar si el saldo actual es menor a la cantidad a retirar
+     */
+    
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
